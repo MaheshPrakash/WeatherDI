@@ -1,4 +1,4 @@
-# WeatherDI Demo 🌦️
+# WeatherDI  🌦️
 
 A simple **ASP.NET Core 9.0** project that demonstrates the use of **Dependency Injection (DI)** in .NET.  
 This project shows how to inject different weather services (e.g., `FakeWeatherService` and `RealWeatherService`) into a controller without changing the controller code.

@@ -17,13 +17,21 @@ This project shows how to inject different weather services (e.g., `FakeWeatherS
 ## 📂 Project Structure
 WeatherDiDemo/
 │── Controllers/
+
 │ └── WeatherController.cs
+
 │── Services/
+
 │ ├── IWeatherService.cs
+
 │ ├── FakeWeatherService.cs
+
 │ └── RealWeatherService.cs
+
 │── Program.cs
+
 │── WeatherDiDemo.csproj
+
 
 By default, the API will be available at:
 HTTP → http://localhost:5077
@@ -56,10 +64,10 @@ Swagger / Swashbuckle
 🔄 Dependency Injection Flow
 This project demonstrates how controllers depend on abstractions (interfaces) instead of concrete classes.
 
-┌────────────────┐       ┌────────────────────┐       ┌──────────────────────┐
-│  Controller    │ ----> │  IWeatherService   │ ----> │  FakeWeatherService   │
-│ (WeatherCtrl)  │       │ (Interface)        │       │  or RealWeatherService│
-└────────────────┘       └────────────────────┘       └──────────────────────┘
+    Controller[WeatherController] --> IWeatherService
+    IWeatherService --> FakeWeatherService
+    IWeatherService --> RealWeatherService
+
 WeatherController depends only on IWeatherService.
 At runtime, DI container decides which implementation (FakeWeatherService or RealWeatherService) to inject.
 This makes the code flexible, testable, and loosely coupled.
